@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site";
 import { RESUME_DATA } from "@/data/resume-data";
 
 export function generatePersonStructuredData() {
@@ -20,7 +21,7 @@ export function generatePersonStructuredData() {
       telephone: RESUME_DATA.contact.tel,
       contactType: "personal",
     },
-    jobTitle: "Full Stack Engineer",
+    jobTitle: "Software Engineer",
     worksFor:
       RESUME_DATA.work.length > 0
         ? {
@@ -56,12 +57,12 @@ export function generateWebPageStructuredData() {
     "@type": "WebPage",
     name: `${RESUME_DATA.name} - Resume`,
     description: RESUME_DATA.about,
-    url: "https://cv.jarocki.me",
+    url: SITE_URL,
     inLanguage: "en-US",
     isPartOf: {
       "@type": "WebSite",
       name: `${RESUME_DATA.name}'s Professional Resume`,
-      url: "https://cv.jarocki.me",
+      url: SITE_URL,
     },
     about: {
       "@type": "Person",
@@ -83,6 +84,6 @@ export function generateResumeStructuredData() {
     about: person,
     name: `${RESUME_DATA.name} - Professional Resume`,
     description: `Professional resume and portfolio of ${RESUME_DATA.name}, ${RESUME_DATA.about}`,
-    url: "https://cv.jarocki.me",
+    url: SITE_URL,
   };
 }

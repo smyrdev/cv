@@ -1,78 +1,30 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  // Static HTML export — required for GitHub Pages, which serves static files only.
+  output: 'export',
 
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
-  // Optimize images
+  // Optimize images. The on-demand optimizer needs a server, so it is disabled
+  // for the static export; images are served as-is from their source URL.
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
   },
 
   // Compress output
   compress: true,
 
-  // Headers for security and performance
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
-        ]
-      },
-      {
-        source: '/(.*).svg',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ]
-      },
-      {
-        source: '/(.*).png',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ]
-      }
-    ];
-  },
-
+  // NOTE: the previous `headers()` block was removed. Custom headers require a
+  // server and are unsupported with `output: 'export'`; GitHub Pages serves its
+  // own fixed headers and cannot be configured. Security headers are set via
+  // <meta> where an equivalent exists, otherwise they are unavailable on Pages.
 
   // Reduce bundle size by excluding source maps in production
   productionBrowserSourceMaps: false,

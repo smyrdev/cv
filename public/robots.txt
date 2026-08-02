@@ -1,13 +1,11 @@
-# Robots.txt for https://cv.jarocki.me
+# Robots.txt for https://cv.example.com
 
 User-agent: *
 Allow: /
-Disallow: /api/
 Disallow: /_next/
-Disallow: /graphql
 
 # Sitemap location
-Sitemap: https://cv.jarocki.me/sitemap.xml
+Sitemap: https://cv.example.com/sitemap.xml
 
 # Crawl-delay for responsible crawling
 Crawl-delay: 1

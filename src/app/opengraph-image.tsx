@@ -1,7 +1,9 @@
 import { ImageResponse } from "next/og";
 import { RESUME_DATA } from "../data/resume-data";
 
-export const runtime = "edge";
+// Rendered once at build time. The edge runtime is unavailable under
+// `output: 'export'`, so the OG image is generated as a static PNG.
+export const dynamic = "force-static";
 
 export const alt = "Minimalist Resume";
 export const size = {
