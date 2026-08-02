@@ -1,11 +1,11 @@
-# Robots.txt for https://cv.example.com
+# Robots.txt for https://cv.smyr.dev
 
 User-agent: *
 Allow: /
 Disallow: /_next/
 
 # Sitemap location
-Sitemap: https://cv.example.com/sitemap.xml
+Sitemap: https://cv.smyr.dev/sitemap.xml
 
 # Crawl-delay for responsible crawling
 Crawl-delay: 1

@@ -5,4 +5,4 @@
  * data). Change this one value when moving the site to another domain, and
  * keep `public/CNAME` in sync — GitHub Pages reads the domain from that file.
  */
-export const SITE_URL = "https://cv.example.com";
+export const SITE_URL = "https://cv.smyr.dev";
