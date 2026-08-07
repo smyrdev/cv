@@ -11,7 +11,7 @@ simple web app that renders a minimalist CV with print-friendly layout.
 ## getting started
 
 ```bash
-git clone https://github.com/BartoszJarocki/cv.git
+git clone https://github.com/smyrdev/cv.git
 cd cv
 pnpm install
 pnpm dev

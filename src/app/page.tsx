@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "@/lib/site";
 import { CommandMenu } from "@/components/command-menu";
 import { RESUME_DATA } from "@/data/resume-data";
+import { SITE_URL } from "@/lib/site";
 import { generateResumeStructuredData } from "@/lib/structured-data";
 import { Education } from "./components/education";
 import { Header } from "./components/header";

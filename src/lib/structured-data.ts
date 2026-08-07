@@ -1,5 +1,5 @@
-import { SITE_URL } from "@/lib/site";
 import { RESUME_DATA } from "@/data/resume-data";
+import { SITE_URL } from "@/lib/site";
 
 export function generatePersonStructuredData() {
   return {
