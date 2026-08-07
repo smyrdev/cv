@@ -18,7 +18,6 @@ export function generatePersonStructuredData() {
     contactPoint: {
       "@type": "ContactPoint",
       email: RESUME_DATA.contact.email,
-      telephone: RESUME_DATA.contact.tel,
       contactType: "personal",
     },
     jobTitle: "Software Engineer",

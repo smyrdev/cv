@@ -1,7 +1,7 @@
 import type { ResumeData } from "@/lib/types";
 
 export const RESUME_DATA: ResumeData = {
-  name: "Mohammad Rahimi",
+  name: "Samyar Rahimi",
   initials: "MR",
   location: "Berlin, Germany, CET",
   locationLink: "https://www.google.com/maps/place/Berlin",
@@ -12,8 +12,7 @@ export const RESUME_DATA: ResumeData = {
   avatarUrl: "https://avatars.githubusercontent.com/u/28873155?v=4",
   personalWebsiteUrl: "https://www.linkedin.com/in/samyarahimi",
   contact: {
-    email: "mammad.rsh@gmail.com",
-    tel: "+491777610542",
+    email: "hello@smyr.dev",
     social: [
       {
         name: "GitHub",

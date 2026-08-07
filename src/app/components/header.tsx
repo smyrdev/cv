@@ -1,4 +1,4 @@
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
+import { GlobeIcon, MailIcon } from "lucide-react";
 import type React from "react";
 import { Avatar } from "@/components/avatar";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
@@ -17,7 +17,6 @@ const ICON_MAP: Record<
   x: XIcon,
   globe: GlobeIcon,
   mail: MailIcon,
-  phone: PhoneIcon,
 } as const;
 
 interface LocationLinkProps {
@@ -94,15 +93,6 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
           />
         </li>
       )}
-      {contact.tel && (
-        <li>
-          <SocialButton
-            href={`tel:${contact.tel}`}
-            iconType="phone"
-            label="Phone"
-          />
-        </li>
-      )}
       {contact.social.map((social) => (
         <li key={social.name}>
           <SocialButton
@@ -136,22 +126,11 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
         </>
       )}
       {contact.email && (
-        <>
-          <a
-            className="underline hover:text-foreground/70"
-            href={`mailto:${contact.email}`}
-          >
-            {contact.email}
-          </a>
-          <span aria-hidden="true">/</span>
-        </>
-      )}
-      {contact.tel && (
         <a
           className="underline hover:text-foreground/70"
-          href={`tel:${contact.tel}`}
+          href={`mailto:${contact.email}`}
         >
-          {contact.tel}
+          {contact.email}
         </a>
       )}
     </div>
